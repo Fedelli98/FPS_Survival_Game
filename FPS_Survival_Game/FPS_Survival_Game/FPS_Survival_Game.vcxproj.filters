@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="States">
+      <UniqueIdentifier>{4f6eed0d-87bd-4a22-8393-196bb9235bfc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Entity">
+      <UniqueIdentifier>{1e4c99d2-2e64-4b9f-a9dc-6e694b7c5ea6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components">
+      <UniqueIdentifier>{742dc09a-b289-4447-a8ba-bfeb7887d7b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Entity\Enemies">
+      <UniqueIdentifier>{0bbd7506-d4d7-40c9-af60-672d3a823d97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Entity\Objects">
+      <UniqueIdentifier>{922f97fd-4fcc-4822-983c-2d91f1105c86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Entity\Player">
+      <UniqueIdentifier>{e7b1c4cb-1db2-444e-8917-734c5a5cc5aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{5dbc1a95-2273-4355-8270-888bf8d6c3e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Map">
+      <UniqueIdentifier>{90b78eeb-7e3d-4128-9a9e-8292f7366478}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Strategy">
+      <UniqueIdentifier>{8595dcae-f6c2-4243-92d3-1e30141c33ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{b0e8dd6b-6ca1-4cb3-9bea-5a82e11deac6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AStar">
+      <UniqueIdentifier>{4e848201-ee2e-4b5e-b6b7-f1a163769cf4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="Boss.cpp">
+      <Filter>Entity\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Entity\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="boost.cpp">
+      <Filter>Entity\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>Entity\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Entity\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="Pet.cpp">
+      <Filter>Entity\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerT.cpp">
+      <Filter>Entity\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Hud.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="TileMap.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="StGunPlayerFight.cpp">
+      <Filter>Strategy</Filter>
+    </ClCompile>
+    <ClCompile Include="StRiflePlayerFight.cpp">
+      <Filter>Strategy</Filter>
+    </ClCompile>
+    <ClCompile Include="StShotgunPlayerFight.cpp">
+      <Filter>Strategy</Filter>
+    </ClCompile>
+    <ClCompile Include="AStar.cpp">
+      <Filter>AStar</Filter>
+    </ClCompile>
+    <ClCompile Include="GridNode.cpp">
+      <Filter>AStar</Filter>
+    </ClCompile>
+    <ClCompile Include="BoostManager.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionManager.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureHolder.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="TileSheetAnimator.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Collision.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Achievement.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenuState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="PauseMenu.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="RoundManager.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectionCharacter.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="State.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="Store.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="MovementComponent.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="GameState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Entity.h">
+      <Filter>Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="Boss.h">
+      <Filter>Entity\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Entity\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="boost.h">
+      <Filter>Entity\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>Entity\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>Entity\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="Pet.h">
+      <Filter>Entity\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerT.h">
+      <Filter>Entity\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Hud.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Tile.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="TileMap.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="StGunPlayerFight.h">
+      <Filter>Strategy</Filter>
+    </ClInclude>
+    <ClInclude Include="StrategyFight.h">
+      <Filter>Strategy</Filter>
+    </ClInclude>
+    <ClInclude Include="StRiflePlayerFight.h">
+      <Filter>Strategy</Filter>
+    </ClInclude>
+    <ClInclude Include="StShotgunPlayerFight.h">
+      <Filter>Strategy</Filter>
+    </ClInclude>
+    <ClInclude Include="AStar.h">
+      <Filter>AStar</Filter>
+    </ClInclude>
+    <ClInclude Include="GridNode.h">
+      <Filter>AStar</Filter>
+    </ClInclude>
+    <ClInclude Include="BoostManager.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionManager.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Observer.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Subject.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureHolder.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="TileSheetAnimator.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Collision.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Achievement.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenuState.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="PauseMenu.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="RoundManager.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectionCharacter.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="State.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="Store.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="GameCharacter.h">
+      <Filter>Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="MovementComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="GameState.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
