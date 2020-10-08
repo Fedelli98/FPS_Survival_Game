@@ -36,7 +36,7 @@ TileMap::TileMap(sf::Vector2i map_size)
 					while (std::getline(stream, value, ' ') && openfile.peek() != '\n')
 					{
 						std::string t_type = value.substr(0, value.find(','));
-						tile_type = atoi(t_type.c_str());
+						int tile_type = atoi(t_type.c_str());
 
 						this->map[y][x] = new Tile(x * this->grid_size_f, y * grid_size_f, this->grid_size_f, tileset, tile_type);
 						x++;

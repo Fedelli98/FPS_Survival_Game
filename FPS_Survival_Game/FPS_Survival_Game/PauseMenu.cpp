@@ -60,7 +60,8 @@ void PauseMenu::updateButtons(sf::Event event)
 	{
 		this->states->pop();
 		this->states->pop();
-		this->states->top()->endState();
+		this->states->pop();
+		//this->states->top()->endState();
 	}
 
 	//EXIT_GAME
@@ -86,14 +87,14 @@ void PauseMenu::initButtons()
 {
 	//RESUME
 	this->buttons["RESUME"] = std::make_unique<Button>
-		("Sources/edunline.ttf", "RESUME", sf::Color::Black, 100.f, sf::Vector2f(650.f, 200.f),
+		("Fonts/edunline.ttf", "RESUME", sf::Color::Black, 100.f, sf::Vector2f(650.f, 200.f),
 			sf::Vector2f(355, 75.f), sf::Color::Transparent, 0.f, sf::Color::Transparent, sf::Vector2f(650.f, 230.f));
 	//MAIN_MENU
 	this->buttons["MAIN_MENU"] = std::make_unique<Button>
-		("Sources/edunline.ttf", "Main Menu", sf::Color::Black, 100.f, sf::Vector2f(770.f, 400.f),
+		("Fonts/edunline.ttf", "Main Menu", sf::Color::Black, 100.f, sf::Vector2f(770.f, 400.f),
 			sf::Vector2f(510, 75.f), sf::Color::Transparent, 0.f, sf::Color::Transparent, sf::Vector2f(770.f, 430.f));
 	//EXIT
 	this->buttons["EXIT"] = std::make_unique<Button>
-		("Sources/edunline.ttf", "Exit Game", sf::Color::Black, 70.f, sf::Vector2f(890.f, 600.f),
+		("Fonts/edunline.ttf", "Exit Game", sf::Color::Black, 70.f, sf::Vector2f(890.f, 600.f),
 			sf::Vector2f(355.f, 50.f), sf::Color::Transparent, 0.f, sf::Color::Transparent, sf::Vector2f(890.f, 620.f));
 }

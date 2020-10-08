@@ -15,7 +15,7 @@ Achievement::Achievement(RoundManager * subject)
 
 
 	//TESTO
-	this->font.loadFromFile("Sources/04B_30__.ttf");
+	this->font.loadFromFile("Fonts/04B_30__.ttf");
 	this->text.setFont(this->font);
 	this->text.setFillColor(sf::Color::White);
 	this->text.setCharacterSize(15);

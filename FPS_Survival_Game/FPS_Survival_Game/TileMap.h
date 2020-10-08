@@ -13,7 +13,6 @@ public:
 private:
 	float grid_size_f;
 	sf::Vector2i max_size;
-	int tile_type;
 
     std::vector<std::vector<Tile*>> map;
 	sf::Texture tileset;

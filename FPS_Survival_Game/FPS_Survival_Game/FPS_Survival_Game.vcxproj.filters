@@ -150,6 +150,9 @@
     <ClCompile Include="Animation.cpp">
       <Filter>Utility</Filter>
     </ClCompile>
+    <ClCompile Include="EditorState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Entity.h">
@@ -262,6 +265,9 @@
     </ClInclude>
     <ClInclude Include="Animation.h">
       <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorState.h">
+      <Filter>States</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

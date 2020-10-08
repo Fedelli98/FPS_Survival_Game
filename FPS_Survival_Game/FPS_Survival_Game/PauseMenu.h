@@ -1,4 +1,6 @@
-#pragma once
+#ifndef PAUSEMENU_H
+#define PAUSEMENU_H
+
 #include "State.h"
 #include "Button.h"
 
@@ -28,3 +30,4 @@ private:
 	sf::Sprite background;
 };
 
+#endif

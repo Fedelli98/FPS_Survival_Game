@@ -93,6 +93,11 @@ button_states Button::getState()
 	return button_states(this->buttonstate);
 }
 
+button_states Button::getPrevState()
+{
+	return button_states(this->prevbuttonstate);
+}
+
 sf::RectangleShape Button::getBox()
 {
 	return this->box;
@@ -170,6 +175,7 @@ void Button::update(const sf::Vector2f mouse_pos_view)
 
 void Button::update(const sf::Vector2f mouse_pos_view, sf::Event event)
 {
+	this->prevbuttonstate = buttonstate;
 	this->buttonstate = BTN_IDLE;
 
 	isActive(mouse_pos_view, event);
@@ -182,14 +188,11 @@ void Button::update(const sf::Vector2f mouse_pos_view, sf::Event event)
 		break;
 
 	case BTN_HOVER:
-		if (text.getCharacterSize() > 1)
-			buttonAnimation(sf::Color::White);
-		else 
-			setStandard();
+		setStandard();
 		break;
 
 	case BTN_PRESSED:
-		if (text.getCharacterSize() > 1)
+		if (text.getCharacterSize() > 1 && text.getCharacterSize() > 1)
 			buttonAnimation(sf::Color::White);
 		else
 			buttonAnimation();
@@ -217,6 +220,18 @@ void Button::buttonAnimation()
 		sf::Vector2f(box.getSize().x / 2, box.getSize().y / 2));
 	box.setScale(box.getScale() - sf::Vector2f(0.2f, 0.2f));
 	//box.setPosition(pos);
+}
+
+bool Button::isStandard()
+{
+	if (text.getScale() == right_scale)
+	{
+		if (text.getFillColor() == right_color)
+			if (box.getScale() == right_scale)
+				if (box.getPosition() == original_pos)
+					return true;
+	}
+	return false;
 }
 
 void Button::setStandard()

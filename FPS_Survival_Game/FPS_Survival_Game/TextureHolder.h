@@ -7,7 +7,7 @@ namespace Textures
 	enum ID { Personaggio, PersonaggioMS, ShotgunP, RifleP, HandgunP, Enemy, Proiettile, Boss, Pet };
 	enum SHOOT { Rilfe_S, Handgun_S, Shotgun_S, Enemy_Attack };
 	enum BACKGROUND { MainMenuState };
-	enum OBJECTS { HP, MS, Blood, Coin, Settings, Esc };
+	enum OBJECTS { HP, MS, Blood, Coin, Settings, Tileset, Esc};
 }
 
 

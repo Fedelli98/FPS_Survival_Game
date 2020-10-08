@@ -36,22 +36,22 @@ void MainMenuState::initButtons()
 {
 	//NEW GAME
 	this->buttons["NEW_GAME"] = std::make_unique<Button>
-		("Sources/edunline.ttf", "New Game", sf::Color::Black, 100.f, sf::Vector2f(660.f, 200.f),
+		("Fonts/edunline.ttf", "New Game", sf::Color::Black, 100.f, sf::Vector2f(660.f, 200.f),
 			sf::Vector2f(500.f, 70.f), sf::Color::Transparent, 0.f, sf::Color::Transparent, sf::Vector2f(660.f, 230.f));
 	//SETTINGS
 	this->buttons["SETTINGS"] = std::make_unique<Button>
-		("Sources/edunline.ttf", "", sf::Color::Transparent, 0, sf::Vector2f(0.f, 0.f),
+		("Fonts/edunline.ttf", "", sf::Color::Transparent, 0, sf::Vector2f(0.f, 0.f),
 			sf::Vector2f((float)this->textures->get(Textures::Settings).getSize().x, 
 			(float)this->textures->get(Textures::Settings).getSize().y),
 			sf::Color::Transparent, 0.f, sf::Color::Transparent, sf::Vector2f(0.f, 0.f), textures->get(Textures::Settings),
 			sf::Vector2f(0.4f, 0.4f));
 	//EDITOR
 	this->buttons["EDITOR"] = std::make_unique<Button>
-		("Sources/edunline.ttf", "Editor", sf::Color::Black, 100, sf::Vector2f(800.f, 400.f),
-			sf::Vector2f(170.f, 50.f), sf::Color::Transparent, 0.f, sf::Color::Transparent, sf::Vector2f(800.f, 430.f));
+		("Fonts/edunline.ttf", "Editor", sf::Color::Black, 100, sf::Vector2f(800.f, 400.f),
+			sf::Vector2f(170.f, 70.f), sf::Color::Transparent, 0.f, sf::Color::Transparent, sf::Vector2f(800.f, 430.f));
 	//EXIT
 	this->buttons["EXIT"] = std::make_unique<Button>
-		("Sources/edunline.ttf", "Exit", sf::Color::Black, 70.f, sf::Vector2f(900.f, 600.f),
+		("Fonts/edunline.ttf", "Exit", sf::Color::Black, 70.f, sf::Vector2f(900.f, 600.f),
 			sf::Vector2f(135.f, 50.f), sf::Color::Transparent, 0.f, sf::Color::Transparent, sf::Vector2f(900.f, 620.f));
 }
 
@@ -88,13 +88,19 @@ void MainMenuState::updateButtons(sf::Event event)
 	}
 
 	//NEWGAME
-	if (buttons.at("NEW_GAME")->getState() == BTN_PRESSED)
+	if (buttons.at("NEW_GAME")->getState() == BTN_HOVER && buttons.at("NEW_GAME")->getPrevState() == BTN_PRESSED)
 	{
 		this->states->push(new SelectionCharacter(this->window, this->supportedKeys, this->states));
 		return;
 	}
 
-	if (buttons.at("EXIT")->getState() == BTN_PRESSED)
+	if (buttons.at("EDITOR")->getState() == BTN_HOVER && buttons.at("EDITOR")->getPrevState() == BTN_PRESSED)
+	{
+		this->states->push(new EditorState(this->window, this->supportedKeys, this->states));
+		return;
+	}
+
+	if (buttons.at("EXIT")->getState() == BTN_HOVER && buttons.at("EXIT")->getPrevState() == BTN_PRESSED)
 	{
 		this->states->top()->endState();
 	}
@@ -120,5 +126,4 @@ void MainMenuState::render(std::shared_ptr<sf::RenderWindow> target)
 	{
 		it->second->draw(target);
 	}
-	//render del player
 }

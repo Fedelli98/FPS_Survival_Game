@@ -24,9 +24,11 @@ public:
 	void setPosition(sf::Vector2f pos);
 	void setScale(sf::Vector2f scale);
 
+	bool isStandard();
 	void setStandard();
 
 	button_states getState();
+	button_states getPrevState();
 	sf::RectangleShape getBox();
 
 	void draw(std::shared_ptr<sf::RenderWindow> target);
@@ -44,6 +46,7 @@ private:
 
 	//Variables
 	short unsigned buttonstate;
+	short unsigned prevbuttonstate;
 	sf::Font font;
 	sf::Text text;
 

@@ -3,6 +3,7 @@
 
 #include "GameState.h"
 #include "SelectionCharacter.h"
+#include "EditorState.h"
 
 class MainMenuState : 
 	public State
@@ -10,7 +11,6 @@ class MainMenuState :
 private:
 	//Variables
 	sf::RectangleShape background;
-	std::map<std::string, std::unique_ptr<Button>> buttons;
 	//Funtions
 	void initKeybinds();
 	void initBackground();
@@ -20,8 +20,8 @@ private:
 public:
 	MainMenuState(std::shared_ptr<sf::RenderWindow> window, std::map<std::string, int>* supportedKeys, std::stack<State*>* states);
 	virtual ~MainMenuState();
-	//Functions
 
+	//Functions
 	void updateInput(const float& dt);
 	void updateButtons(sf::Event event);
 	void update(const sf::Time& delta_time);
@@ -29,4 +29,4 @@ public:
 	void render(std::shared_ptr<sf::RenderWindow> target = nullptr);
 };
 
-#endif.	
+#endif

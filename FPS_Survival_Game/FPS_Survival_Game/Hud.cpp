@@ -86,7 +86,7 @@ void Hud::renderTextsHud(std::shared_ptr<sf::RenderWindow> target)
 
 void Hud::fontInit()
 {
-	font.loadFromFile("Sources/04B_30__.ttf");
+	font.loadFromFile("Fonts/04B_30__.ttf");
 
 		ammo.setFont(font);
 		hp.setFont(font);

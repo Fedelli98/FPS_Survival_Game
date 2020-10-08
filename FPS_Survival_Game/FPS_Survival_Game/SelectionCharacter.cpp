@@ -32,25 +32,25 @@ void SelectionCharacter::initButtons()
 {
 	//SHOTGUN
 	this->buttons["SHOTGUN"] = std::make_unique<Button>
-		("Sources/edunline.ttf", "", sf::Color::Transparent, 0, sf::Vector2f(0.f, 0.f),
+		("Fonts/edunline.ttf", "", sf::Color::Transparent, 0, sf::Vector2f(0.f, 0.f),
 			sf::Vector2f((float)this->textures->get(Textures::ShotgunP).getSize().x,
 			(float)this->textures->get(Textures::ShotgunP).getSize().y),
 			sf::Color::Transparent, 0.f, sf::Color::Transparent, sf::Vector2f(350.f, 320.f), textures->get(Textures::ShotgunP));
 	//RIFLE
 	this->buttons["RIFLE"] = std::make_unique<Button>
-		("Sources/edunline.ttf", "", sf::Color::Transparent, 0, sf::Vector2f(0.f, 0.f),
+		("Fonts/edunline.ttf", "", sf::Color::Transparent, 0, sf::Vector2f(0.f, 0.f),
 			sf::Vector2f((float)this->textures->get(Textures::RifleP).getSize().x,
 			(float)this->textures->get(Textures::RifleP).getSize().y),
 			sf::Color::Transparent, 0.f, sf::Color::Transparent, sf::Vector2f(800.f, 320.f), textures->get(Textures::RifleP));
 	//GUN
 	this->buttons["HANDGUN"] = std::make_unique<Button>
-		("Sources/edunline.ttf", "", sf::Color::Transparent, 0, sf::Vector2f(0.f, 0.f),
+		("Fonts/edunline.ttf", "", sf::Color::Transparent, 0, sf::Vector2f(0.f, 0.f),
 			sf::Vector2f((float)this->textures->get(Textures::HandgunP).getSize().x,
 			(float)this->textures->get(Textures::HandgunP).getSize().y),
 			sf::Color::Transparent, 0.f, sf::Color::Transparent, sf::Vector2f(1250.f, 320.f), textures->get(Textures::HandgunP));
 	//RETURN
 	this->buttons["RETURN"] = std::make_unique<Button>
-		("Sources/edunline.ttf", "Exit Game", sf::Color::Black, 70.f, sf::Vector2f(725.f, 930.f),
+		("Fonts/edunline.ttf", "Exit Game", sf::Color::Black, 70.f, sf::Vector2f(725.f, 930.f),
 			sf::Vector2f(350.f, 50.f), sf::Color::Transparent, 0.f, sf::Color::Transparent, sf::Vector2f(725.f, 955.f));
 }
 
@@ -76,21 +76,21 @@ void SelectionCharacter::updateButtons(sf::Event event)
 	}
 
 	//SHOTGUN
-	if (buttons.at("SHOTGUN")->getState() == BTN_PRESSED)
+	if (buttons.at("SHOTGUN")->getState() == BTN_HOVER && buttons.at("SHOTGUN")->getPrevState() == BTN_PRESSED)
 	{
 		this->states->push(new GameState(this->window, this->supportedKeys, this->states, Textures::ID::ShotgunP, std::make_shared<StShotgunPlayerFight>(StShotgunPlayerFight())));
 		return;
 	}
 
 	//RIFLE
-	else if (buttons.at("RIFLE")->getState() == BTN_PRESSED)
+	else if (buttons.at("RIFLE")->getState() == BTN_HOVER && buttons.at("RIFLE")->getPrevState() == BTN_PRESSED)
 	{
 		this->states->push(new GameState(this->window, this->supportedKeys, this->states, Textures::ID::RifleP, std::make_shared<StRiflePlayerFight>(StRiflePlayerFight())));
 		return;
 	}
 
 	//HANDGUN
-	else if (buttons.at("HANDGUN")->getState() == BTN_PRESSED)
+	else if (buttons.at("HANDGUN")->getState() == BTN_HOVER && buttons.at("HANDGUN")->getPrevState() == BTN_PRESSED)
 	{
 		this->states->push(new GameState(this->window, this->supportedKeys, this->states, Textures::ID::HandgunP, std::make_shared<StGunPlayerFight>(StGunPlayerFight())));
 		return;

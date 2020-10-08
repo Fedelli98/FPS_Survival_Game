@@ -11,10 +11,11 @@ Store::Store(std::shared_ptr<sf::RenderWindow> window, std::map<std::string, int
 	this->window = window;
 
 	initBackground();
+	initTextures();
 	initButtons();
 
 	//COINS
-	coinsfont.loadFromFile("Sources/edunline.ttf");
+	coinsfont.loadFromFile("Fonts/edunline.ttf");
 	//PlayerCoins
 	playercoins.setFont(coinsfont);
 	std::string coins = std::to_string(player->getCoins());
@@ -98,15 +99,17 @@ void Store::initButtons()
 {
 	//HEALTH
 	this->buttons["HEALTH"] = std::make_unique<Button>
-		("Sources/edunline.ttf", "", sf::Color::Transparent, 0, sf::Vector2f(0, 0),
-			sf::Vector2f(64, 64), sf::Color::Transparent, 0.f, sf::Color::Transparent, sf::Vector2f(96, 230), textures->get(Textures::HP));
+		("Fonts/edunline.ttf", "", sf::Color::Transparent, 0, sf::Vector2f(0, 0),
+			sf::Vector2f(128, 128), sf::Color::Transparent, 0.f, sf::Color::Transparent,
+			sf::Vector2f(160, 320) + background.getPosition(), textures->get(Textures::HP));
 	health.button = *buttons.at("HEALTH");
 	health.price = 3;
 
 	//ESC
 	this->buttons["ESC"] = std::make_unique<Button>
-		("Sources/edunline.ttf", "", sf::Color::Transparent, 0, sf::Vector2f(0.f, 0.f),
-			sf::Vector2f(32, 32), sf::Color::Transparent, 0.f, sf::Color::Transparent, sf::Vector2f(704, 128), textures->get(Textures::Esc));
+		("Fonts/edunline.ttf", "", sf::Color::Transparent, 0, sf::Vector2f(0.f, 0.f),
+			sf::Vector2f(64, 64), sf::Color::Transparent, 0.f, sf::Color::Transparent,
+			sf::Vector2f(736, 160) + background.getPosition(), textures->get(Textures::Esc));
 
 }
 

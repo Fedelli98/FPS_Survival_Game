@@ -16,6 +16,8 @@ class State
 private:
 	bool quit;
 
+	bool allanimdone;
+
 protected:
 	//Varaibles
 	std::map<std::string, std::unique_ptr<Button>> buttons;
@@ -47,6 +49,7 @@ public:
 	void updateMousePos();
 	
 	void endState();
+	virtual bool endAnimation();
 	virtual void updateInput(const float& dt) = 0;
 	virtual void update(const sf::Time& delta_time) = 0;
 	virtual void update(const sf::Time& delta_time, sf::Event event) = 0;
