@@ -62,6 +62,18 @@ void MainMenuState::initTextures()
 	textures->load(Textures::Settings, "Sources/Settings-icon.png");
 }
 
+void MainMenuState::initMusic()
+{
+	if (!backgroundmusic.openFromFile("Sources/Sounds/Music/Atmosphere8.wav"))
+	{
+		throw std::runtime_error("Music Atmosphere8.was could not be loaded");
+	}
+
+	backgroundmusic.setVolume(30);
+	backgroundmusic.setLoop(true);
+	backgroundmusic.play();
+}
+
 MainMenuState::MainMenuState(std::shared_ptr<sf::RenderWindow> window, std::map<std::string, int>* supportedKeys, std::stack<State*>* states)
 	: State(window, supportedKeys, states)
 {
@@ -70,6 +82,7 @@ MainMenuState::MainMenuState(std::shared_ptr<sf::RenderWindow> window, std::map<
 	this->initBackground();
 	this->initButtons();
 	this->initKeybinds();
+	this->initMusic();
 }
 
 MainMenuState::~MainMenuState()

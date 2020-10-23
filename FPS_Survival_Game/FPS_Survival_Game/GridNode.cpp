@@ -21,10 +21,13 @@ void GridNode::initGrid(std::vector<GridLocation> obstacles)
 			GridLocation node;
 			node.x = j;
 			node.y = i;
-			if (obstacles[k].x == j && obstacles[k].y == i)
+			if (!obstacles.empty())
 			{
-				node.walkable = false;
-				k++;
+				if (obstacles[k].x == j && obstacles[k].y == i)
+				{
+					node.walkable = false;
+					k++;
+				}
 			}
 			else node.walkable = true;
 			this->grid[i][j] = node;

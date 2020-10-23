@@ -4,6 +4,7 @@
 #include "Entity.h"
 #include "TextureHolder.h"
 #include "Button.h"
+#include "SFML/Audio.hpp"
 #include <SFML/Window.hpp>
 
 namespace GameStates

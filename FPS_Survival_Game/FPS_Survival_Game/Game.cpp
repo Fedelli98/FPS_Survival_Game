@@ -219,9 +219,9 @@ void Game::run()
 								prev_state = GameStates::Menu;
 							sf::Event Event;
 							while (this->window->pollEvent(Event) &&
-								this->states.top()->getID() == GameStates::Menu &&
 								!this->states.empty())
 							{
+								if(this->states.top()->getID() == GameStates::Menu)
 								updateMenu(TimePerFrame, Event);
 							}
 							clock.restart();

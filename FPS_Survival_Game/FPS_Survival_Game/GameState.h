@@ -99,7 +99,7 @@ private:
 
 
 public:
-	GameState(std::shared_ptr<sf::RenderWindow> window, std::map<std::string, int>* supportedKeys, std::stack<State*>* states,
+	GameState(sf::Vector2i mapsize, std::shared_ptr<sf::RenderWindow> window, std::map<std::string, int>* supportedKeys, std::stack<State*>* states,
 		Textures::ID id, std::shared_ptr<StrategyFight> stf);
 	virtual ~GameState();
 

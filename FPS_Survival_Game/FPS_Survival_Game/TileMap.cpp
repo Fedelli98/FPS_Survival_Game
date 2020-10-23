@@ -5,16 +5,41 @@
 TileMap::TileMap(sf::Vector2i map_size)
 {
 	this->grid_size_f = 64.f;
-	this->max_size.x = map_size.x;
-	this->max_size.y = map_size.y;
+	//this->max_size.x = map_size.x;
+	//this->max_size.y = map_size.y;
 
 	if(!tileset.loadFromFile("Sources/tileSheet/tilesheet.png"))
 	{//THROW
 		throw std::runtime_error("il file errore");
 	}
 	tileset.loadFromFile("Sources/tileSheet/tilesheet.png");
-	
-	std::ifstream openfile("Sources/Mappa.txt");
+	std::string mapname = "Sources/NewMap.txt";
+	std::ifstream openfile(mapname);
+	if (!openfile.is_open())
+	{
+		mapname = "Sources/Mappa.txt";
+		openfile.open(mapname);
+	}
+
+	std::string str1, value1;
+	std::getline(openfile, str1);
+	std::stringstream stream1(str1);
+	while (std::getline(stream1, value1, ' ') && openfile.peek() != '\n')
+	{
+		max_size.x += 1;
+	}
+	while (!openfile.eof())
+	{
+		std::string str1, value1;
+		std::getline(openfile, str1);
+		std::stringstream stream1(str1);
+		while (std::getline(stream1, value1, '\n') && openfile.peek() != '\n')
+			max_size.y += 1;
+	}
+	max_size.y += 1;
+	openfile.close();
+
+	openfile.open(mapname);
 		//devo leggere il file e in base al numero trovato mettere un tile diverso 
 	if(openfile.is_open())
 	{
@@ -47,6 +72,7 @@ TileMap::TileMap(sf::Vector2i map_size)
 
 		}
 	}
+	openfile.close();
 }
 
 

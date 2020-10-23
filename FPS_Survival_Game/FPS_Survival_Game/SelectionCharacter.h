@@ -23,6 +23,7 @@ private:
 	void initTextures();
 	void updateButtons(sf::Event event);
 
+	sf::Vector2i calcMapSize();
 	//Variables
 
 	sf::Sprite background;

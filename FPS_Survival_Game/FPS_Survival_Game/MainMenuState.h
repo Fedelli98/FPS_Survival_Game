@@ -11,11 +11,13 @@ class MainMenuState :
 private:
 	//Variables
 	sf::RectangleShape background;
+	sf::Music backgroundmusic;
 	//Funtions
 	void initKeybinds();
 	void initBackground();
 	void initButtons();
 	void initTextures();
+	void initMusic();
 
 public:
 	MainMenuState(std::shared_ptr<sf::RenderWindow> window, std::map<std::string, int>* supportedKeys, std::stack<State*>* states);

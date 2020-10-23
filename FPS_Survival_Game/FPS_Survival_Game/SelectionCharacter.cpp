@@ -78,21 +78,21 @@ void SelectionCharacter::updateButtons(sf::Event event)
 	//SHOTGUN
 	if (buttons.at("SHOTGUN")->getState() == BTN_HOVER && buttons.at("SHOTGUN")->getPrevState() == BTN_PRESSED)
 	{
-		this->states->push(new GameState(this->window, this->supportedKeys, this->states, Textures::ID::ShotgunP, std::make_shared<StShotgunPlayerFight>(StShotgunPlayerFight())));
+		this->states->push(new GameState(calcMapSize(), this->window, this->supportedKeys, this->states, Textures::ID::ShotgunP, std::make_shared<StShotgunPlayerFight>(StShotgunPlayerFight())));
 		return;
 	}
 
 	//RIFLE
 	else if (buttons.at("RIFLE")->getState() == BTN_HOVER && buttons.at("RIFLE")->getPrevState() == BTN_PRESSED)
 	{
-		this->states->push(new GameState(this->window, this->supportedKeys, this->states, Textures::ID::RifleP, std::make_shared<StRiflePlayerFight>(StRiflePlayerFight())));
+		this->states->push(new GameState(calcMapSize(), this->window, this->supportedKeys, this->states, Textures::ID::RifleP, std::make_shared<StRiflePlayerFight>(StRiflePlayerFight())));
 		return;
 	}
 
 	//HANDGUN
 	else if (buttons.at("HANDGUN")->getState() == BTN_HOVER && buttons.at("HANDGUN")->getPrevState() == BTN_PRESSED)
 	{
-		this->states->push(new GameState(this->window, this->supportedKeys, this->states, Textures::ID::HandgunP, std::make_shared<StGunPlayerFight>(StGunPlayerFight())));
+		this->states->push(new GameState(calcMapSize(), this->window, this->supportedKeys, this->states, Textures::ID::HandgunP, std::make_shared<StGunPlayerFight>(StGunPlayerFight())));
 		return;
 	}
 
@@ -102,4 +102,37 @@ void SelectionCharacter::updateButtons(sf::Event event)
 		this->states->top()->endState();
 	}
 
+}
+
+sf::Vector2i SelectionCharacter::calcMapSize()
+{
+	sf::Vector2i mapsize;
+
+	std::string mapname = "Sources/NewMap.txt";
+	std::ifstream openfile(mapname);
+	if (!openfile.is_open())
+	{
+		mapname = "Sources/Mappa.txt";
+		openfile.open(mapname);
+	}
+
+	std::string str1, value1;
+	std::getline(openfile, str1);
+	std::stringstream stream1(str1);
+	while (std::getline(stream1, value1, ' ') && openfile.peek() != '\n')
+	{
+		mapsize.x += 1;
+	}
+	while (!openfile.eof())
+	{
+		std::string str1, value1;
+		std::getline(openfile, str1);
+		std::stringstream stream1(str1);
+		while (std::getline(stream1, value1, '\n') && openfile.peek() != '\n')
+			mapsize.y += 1;
+	}
+	mapsize.y += 1;
+	openfile.close();
+
+	return mapsize;
 }

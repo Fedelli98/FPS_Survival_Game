@@ -3,6 +3,7 @@
 #include "StShotgunPlayerFight.h"
 #include "StRiflePlayerFight.h"
 #include "StGunPlayerFight.h"
+#include "SFML/Audio.hpp"
 
 
 PlayerT::PlayerT(const sf::Texture& texture, Textures::ID id, std::shared_ptr<StrategyFight> stf, std::shared_ptr<TileSheetAnimator> walk_animator) : id(id), 

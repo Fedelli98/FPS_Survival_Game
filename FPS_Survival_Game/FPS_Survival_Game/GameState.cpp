@@ -541,6 +541,7 @@ void GameState::renderAnimations()
 	}
 }
 
+
 //				***********				INITIALIZATION				***********
 void GameState::playerInit(Textures::ID id, std::shared_ptr<StrategyFight> stf)
 {
@@ -600,11 +601,11 @@ void GameState::varInit()
 	this->pet_alive = false;
 }
 
+//				***********				CONSTRUCTOR					***********
 
-
-GameState::GameState(std::shared_ptr<sf::RenderWindow> window, std::map<std::string, int>* supportedKeys, std::stack<State*>* states,
+GameState::GameState(sf::Vector2i mapsize, std::shared_ptr<sf::RenderWindow> window, std::map<std::string, int>* supportedKeys, std::stack<State*>* states,
 	Textures::ID id, std::shared_ptr<StrategyFight> stf) : State(window, supportedKeys, states), game_view(sf::Vector2f(0.f, 0.f), sf::Vector2f(1320, 900)),
-	tile_map(sf::Vector2i(20, 20)), grid(20, 20)
+	tile_map(mapsize), grid(mapsize.x, mapsize.y)
 {
 	this->ID = GameStates::Game;
 	textureInit();
